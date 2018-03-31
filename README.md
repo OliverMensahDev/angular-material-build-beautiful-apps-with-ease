@@ -100,6 +100,49 @@ Now we have a nice setup and we are good to go to start working on our app.
 
 
 ## Leaving the Pre-built theme world to a custom version(Optional)
+Visit the website of [angular material](https://material.angular.io), click on the guide item in the navigation bar. Under that, select Theming Angular Material. Or you visit [this link](https://material.angular.io/guide/theming) to access the theming page. Here,  you will find what a theme is and also a link to the Angular Material Spec. The Spec shows you the various colors you can choose from in designing your theme. 
+
+In creating our theme, we are basically going to use SaSS to  help us easily reuse some stylings just by creating variables. The CLI will compile the SaSS to normal CSS. To do that just create add `src/custom-theme.scss` file.
+Add the following content to this file.
+```scss
+    @import '~@angular/material/theming';
+    @include mat-core();
+
+    $candy-app-primary: mat-palette($mat-indigo);
+    $candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+     // The warn palette is optional (defaults to red).
+    $candy-app-warn:    mat-palette($mat-red);
+
+    // Create the theme object (a Sass map containing all of the palettes).
+    $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+    // Include theme styles for core and each component used in your app.
+    // Alternatively, you can import and @include the theme mixins for each component
+    // that you are using.
+    @include angular-material-theme($candy-app-theme);
+
+```
+So basically we 
+
+Save this file and in the styles.css,  we don't need our default theme anymore so comment it out as 
+```scss
+    //@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+```
+For our custom these to be loaded. We need to go into our `angular-cli.json` file and add the name of our custome theme file to the array of styles. Upon adding the styles key in the `angular-cli.json`  file should have below as  the values.
+```json
+     "styles": [
+        "styles.css",
+        "custome-theme.scss"
+    ]
+```
+Stop the running dev-server and run it again. There you go, we now have a custom theme for our app. Anytime we can change the colors to suit our needs by justing tweaking the names of colors in our custom theme file. For example in our custom theme we can change the primary color from 
+```scss
+    $candy-app-primary: mat-palette($mat-indigo); 
+```
+to 
+```scss
+    $candy-app-primary: mat-palette($mat-red);
+```
 
 
 
