@@ -99,6 +99,9 @@ With the angular material, we can also make use of the awesome icons that comes 
 Now we have a nice setup and we are good to go to start working on our app.
 
 
+##Using Custom theme 
+Interested in learning how to create a custom theme, click on [this link](https://github.com/OMENSAH/angular-material-build-beautiful-apps-with-ease/tree/custom-theme)
+
 
  
  
