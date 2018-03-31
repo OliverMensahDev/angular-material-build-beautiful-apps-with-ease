@@ -18,9 +18,9 @@ When you visit the website of [angular material](https://material.angular.io), t
 Now lets us explore what the Angular Material comprises by visiting the website of the angular material project. (https://material.angular.io).  You can see both the CDK and the Components tab but we are focusing on the components not the raw cdk.  Under the components, we have a lot them, we won’t explore everything, we will build the foundation on how you learn how to it, use them in sample projects to see the bigger picture so you can also dive in the documentation to add components anything you need them. 
 
 When you click on a component say Slider, we have an` OVERVIEW, API and EXAMPLES tabs`.  
-** Overview documents more about the component, how to use it in different configurations. 
-** API tabs provide a nicer format of the source of the component and provides how a component can be imported into your project as well which properties are bindable to the component.  
-** EXAMPLE tab provides you with a sample project but to see only that component usage, under OVERVIEW tab, click on the source to see how it is used in html, typescript an stylesheet.
+* Overview documents more about the component, how to use it in different configurations. 
+* API tabs provide a nicer format of the source of the component and provides how a component can be imported into your project as well which properties are bindable to the component.  
+* EXAMPLE tab provides you with a sample project but to see only that component usage, under OVERVIEW tab, click on the source to see how it is used in html, typescript an stylesheet.
  
 For now, we have dealt with the angular package,  we need to get started with to build a project with angular material. We can find the steps to execute on the the website. Lets add to the angular project with started earlier.  
 Navigate to your root of the project in your terminal or command line and run 
@@ -75,10 +75,10 @@ App.module
 Import {MaterialModule} from MaterialModule file(./material.module)
  
 Now to the step 4: We have to include a theme. Angular material use a theme which by default is just a color combination of 
-** accent - pink
-** warn - red
-** background - grey
-** primary - indigo
+* accent - pink
+* warn - red
+* background - grey
+* primary - indigo
 Just copy and paste @import "~@angular/material/prebuilt-themes/indigo-pink.css"; into the style.css file. 
  Step 5: 
 Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures.  So we need to install HammerJS  and load it into our application.  From the command line/terminal in the root of your project, run `npm install --save hammerjs`. After installing,   add 
