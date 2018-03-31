@@ -122,7 +122,6 @@ Add the following content to this file.
     @include angular-material-theme($candy-app-theme);
 
 ```
-So basically we 
 
 Save this file and in the styles.css,  we don't need our default theme anymore so comment it out as 
 ```scss
