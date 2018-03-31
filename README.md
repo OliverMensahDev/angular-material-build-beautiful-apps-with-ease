@@ -1,27 +1,5 @@
-# AngularMaterialBuildBeautifulAppsWithEase
+# Angular Material:  Build Beautiful Apps With Ease
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 Angular is an amazing frontend framework with which you can build powerful web applications. In this article, we will explore Angular Material and use it to build an entire, fast, realistic app which looks absolutely beautiful. By then end of the article, you will have a brief refresher on Angular,  detailed introduction into Angular Material, its docs and its usage as well as  building a realistic app that uses many Angular Material components. What are you waiting for,  let get started. 
 
 So what is angular material? A is a third party  package used in Angular project. At its core is an Angular Component Suite which is made  pre-built styled  angular components. With angular the entire app is composition of components and instead of building and styling components from group up, you can leverage with Angular Material  which provide out of the box styled components that follow the Material Design Spec. This is the Spec used by Google in the android operating system and also very popular on web due to it beautiful UI utilities. 
@@ -101,10 +79,8 @@ Now we have a nice setup and we are good to go to start working on our app.
  
  
  
- 
- 
-
-
+# Running the project on your local machine
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
