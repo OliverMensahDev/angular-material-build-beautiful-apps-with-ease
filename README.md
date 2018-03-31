@@ -26,7 +26,7 @@ For now, we have dealt with the angular package,  we need to get started with to
 Navigate to your root of the project in your terminal or command line and run 
 `npm install --save @angular/material @angular/cdk`. 
 Next step is to install the angular animation package which is used by the some Material components to do more advanced transitions. 
-`**NB**`: Before installing this package, check in `package.json` file. Sometimes, install angular material adds this package by default. If not then go ahead to install that with ` npm install --save @angular/animations`
+**NB** : Before installing this package, check in `package.json` file. Sometimes, install angular material adds this package by default. If not then go ahead to install that with ` npm install --save @angular/animations`
 After installation, in order to use the animation,, we need to explicitly it to our project. In angular we have to explicitly add what you what you want to use so your code can be optimize. Having said that , let’s add 
 ```js
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations' 
@@ -70,17 +70,23 @@ import {NgModule} from ‘@angular/core’
 })
 export class MaterialModule {}
 ```
-@NgModule will turn this file into angular module.  We will need to import that from angular core. It has import array to import all the modules needed and also export them with the export array. From here we can outsource these modules by importing the MaterialModule in the root definition file. This helps to access to all those material components needed in our project. 
-App.module  
-Import {MaterialModule} from MaterialModule file(./material.module)
- 
-Now to the step 4: We have to include a theme. Angular material use a theme which by default is just a color combination of 
+@NgModule will turn this file into angular module.  We will need to import that from angular core. It has import array to import all the modules needed and also export them with the export array. From here we can outsource these modules by importing the MaterialModule in the root definition file(` app.module.ts `) as
+```js 
+    import {MaterialModule} from MaterialModule file(./material.module)
+```
+This helps to access to all those material components anywhere in our project. 
+  
+## Angular Material Theme
+We have to include a theme. Angular material use a theme which by default is just a color combination of 
 * accent - pink
 * warn - red
 * background - grey
 * primary - indigo
-Just copy and paste @import "~@angular/material/prebuilt-themes/indigo-pink.css"; into the style.css file. 
- Step 5: 
+Just copy and paste into the style.css file the following contetn
+```css
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+```
+## Angular Material Gesture for Some components
 Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures.  So we need to install HammerJS  and load it into our application.  From the command line/terminal in the root of your project, run `npm install --save hammerjs`. After installing,   add 
 ```js
     import 'hammerjs'; 
@@ -91,7 +97,7 @@ Step 6:  With the angular material, we can also make use of the awesome icons th
  ```html
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  ```
- in the `index.html` file. 
+in the `index.html` file. 
 
 Now we have a nice setup and we are good to go to start working on our app.
  
