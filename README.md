@@ -61,9 +61,9 @@ This is what your appModule needs to look like at the end.
     })
     export class AppModule { }  
 ```
-Now, we are good to go to make use of the angular material module we need in our project. I personally like to create a file where I import all the angular material components I will need in my project. So lets do that by creating `src/material.module.ts` 
-```js
-import {NgModule} from ‘@angular/core’
+Now, we are good to go to make use of the angular material module we need in our project. I personally like to create a file where I import all the angular material components I will need in my project. So lets do that by creating `src/app/material.module.ts` 
+```ts
+import {NgModule} from '@angular/core'
 @NgModule({
 	imports: [],
     exports: []
@@ -72,7 +72,7 @@ export class MaterialModule {}
 ```
 @NgModule will turn this file into angular module.  We will need to import that from angular core. It has import array to import all the modules needed and also export them with the export array. From here we can outsource these modules by importing the MaterialModule in the root definition file(` app.module.ts `) as
 ```js 
-    import {MaterialModule} from MaterialModule file(./material.module)
+    import {MaterialModule} from './material.module.ts';
 ```
 This helps to access to all those material components anywhere in our project. 
   
@@ -87,17 +87,16 @@ Just copy and paste into the style.css file the following contetn
     @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 ```
 ## Angular Material Gesture for Some components
-Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures.  So we need to install HammerJS  and load it into our application.  From the command line/terminal in the root of your project, run `npm install --save hammerjs`. After installing,   add 
+Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures.  So we need to install HammerJS  and load it into our application.  From the command line/terminal in the root of your project, run `npm install --save hammerjs`. After installing,   add to the project's entry point (`src/main.ts`)as
 ```js
     import 'hammerjs'; 
-```
-to your  app's entry point (src/main.ts). 
+``` 
 
-Step 6:  With the angular material, we can also make use of the awesome icons that comes with it. To add that to angular project, just include 
+With the angular material, we can also make use of the awesome icons that comes with it. To add that to angular project, just include the following in the in the `src/index.html` file. 
  ```html
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  ```
-in the `index.html` file. 
+
 
 Now we have a nice setup and we are good to go to start working on our app.
  
