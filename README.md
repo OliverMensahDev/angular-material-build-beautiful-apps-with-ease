@@ -8,8 +8,28 @@ Just clear the contents in our `app.component.html` file and add an angular mate
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 ```
 So we have added a progress bar component. But we cannot see anything in our browser. What is the problem? 
-If you could remember from the first article, we created a file that is supposed to hold all of the components from Angular Material that we will be using in our application. So we have to import the progress bar component. The question how do we know the actual of the component to be imported? Well, Angular Material makes it simple by just 
-
+If you could remember from the first article, we created a file that is supposed to hold all of the components from Angular Material that we will be using in our application. So we have to import the progress bar component. The question how do we know the actual of the component to be imported? Well, Angular Material makes it simple by just capiticing each word of the hyphenated word, remove those hyphens and then suffix it with "Module". In short 
+```html 
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+```
+becomes 
+```ts
+    MatProgressBarModule
+```
+This ` MatProgressBarModule` is imported into `src/material.module.ts` as 
+```ts
+import {NgModule} from '@angular/core'
+import {MatProgressBarModule} from '@angular/material'
+@NgModule({
+	imports: [
+        MatProgressBarModule
+        ],
+    exports: [
+        MatProgressBarModule
+        ]
+})
+export class MaterialModule {}
+```
 Now, when we check in our browser, we can see the progress bar. 
 Awesome, so we now know how to import components and use them in angular material projects. Let's dig deeper. But before we continue make sure you remove this component from our import and also have empty `app.component.html` file
 
