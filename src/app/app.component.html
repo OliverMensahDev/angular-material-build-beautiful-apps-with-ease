@@ -1,0 +1,22 @@
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav role="navigation">
+    <p>I am side Name</p>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+     <div>
+       <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+     <div>LOGO</div>
+     <div fxFlex></div>
+     <div>
+       <a routerLink="">Login</a>
+     </div>
+    </mat-toolbar>
+    <main>
+
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
