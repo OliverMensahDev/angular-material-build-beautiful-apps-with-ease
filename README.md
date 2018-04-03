@@ -29,6 +29,14 @@ export class MaterialModule {}
 Now, when we check in our browser, we can see the progress bar. 
 Awesome, so we now know how to import components and use them in angular material projects. Let's dig deeper. But before we continue make sure you remove this component from our import and also have empty `app.component.html` file
 
+### Adding Navigation 
+Control the Layout of the application. 
+Grid is not part of the Angular Material, we can use Flex Layout package to control that. It uses css flexbox. It positions these html elements nicely by passing the flexbox components as directives. 
+Install it with `npm install @angular/flex-layout` and import into `src/app.module.ts` as `import {FlexLayoutModule} from '@angular/flex-layout';`  and as always add the imported module to the imports array in `@NgModule`
+
+### Making App Responsive
+
+
 # Running the project on your local machine
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 ## install packages with 
