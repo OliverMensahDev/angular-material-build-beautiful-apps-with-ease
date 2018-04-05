@@ -14,21 +14,34 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-     <div>LOGO</div>
+     <div>
+       LOGO
+     </div>
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
             <li>
-                <a routerLink="/login">
+                <a
+                *ngIf="!auth.isAuthenticated()"
+                (click)="auth.login()"
+                >
                   <mat-icon>input</mat-icon>
                   <span >Login</span>
                  </a>
             </li>
-            
+            <li>
+                <a
+                *ngIf="auth.isAuthenticated()"
+                (click)="auth.logout()" type="button"
+                >
+                  <mat-icon>input</mat-icon>
+                  <span >LogOut</span>
+                 </a>
+            </li>
         </ul>
      </div>
     </mat-toolbar>
     <main>
-
+      <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

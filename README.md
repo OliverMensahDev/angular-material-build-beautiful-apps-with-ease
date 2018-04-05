@@ -35,6 +35,7 @@ Grid is not part of the Angular Material, we can use Flex Layout package to cont
 Install it with `npm install @angular/flex-layout` and import into `src/app.module.ts` as `import {FlexLayoutModule} from '@angular/flex-layout';`  and as always add the imported module to the imports array in `@NgModule`
 
 ### Making App Responsive
+Hide menu on small devices and show menu icon on small devices
 
 
 # Running the project on your local machine
