@@ -10,11 +10,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRouters } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({ 
   declarations: [
     AppComponent,
     WelcomeComponent,
+    DashboardComponent,
+    
 
   ],
   imports: [

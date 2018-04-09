@@ -1,0 +1,30 @@
+/* .img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  
+  .search-form {
+    width: 90%;
+  } */
+  .card {
+    min-width: 80%;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
