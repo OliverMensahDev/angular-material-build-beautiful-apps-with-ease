@@ -25,17 +25,29 @@
       </button>
     </div>
      <div>
-       LOGO
+       <a routerLink="/">
+          LOGO
+       </a>
+       
      </div>
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
             <li>
                 <a
-                *ngIf="!auth.isAuthenticated()"
-                (click)="auth.login()"
+                  *ngIf="!auth.isAuthenticated()"
+                  (click)="auth.login()"
                 >
                   <mat-icon>input</mat-icon>
                   <span >Login</span>
+                 </a>
+            </li>
+            <li>
+                <a
+                *ngIf="auth.isAuthenticated()"
+                routerLink="/"
+                >
+                  <mat-icon>home</mat-icon>
+                  <span >Home</span>
                  </a>
             </li>
             <li>

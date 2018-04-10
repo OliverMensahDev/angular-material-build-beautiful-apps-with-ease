@@ -11,6 +11,7 @@ import { AppRouters } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddpostdialogComponent } from './addpostdialog/addpostdialog.component';
 
 
 @NgModule({ 
@@ -18,9 +19,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     WelcomeComponent,
     DashboardComponent,
+    AddpostdialogComponent,
     
 
   ],
+  entryComponents: [AddpostdialogComponent],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
