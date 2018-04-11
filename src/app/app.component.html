@@ -16,6 +16,15 @@
         <span >LogOut</span>
     </a>
     </mat-nav-list>
+    <mat-nav-list>
+      <a
+        *ngIf="auth.isAuthenticated()"
+        routerLink="/"
+      >
+      <mat-icon>home</mat-icon>  
+        <span >Home</span>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -42,13 +51,13 @@
                  </a>
             </li>
             <li>
-                <a
+              <a
                 *ngIf="auth.isAuthenticated()"
                 routerLink="/"
-                >
+              >
                   <mat-icon>home</mat-icon>
                   <span >Home</span>
-                 </a>
+              </a>
             </li>
             <li>
                 <a

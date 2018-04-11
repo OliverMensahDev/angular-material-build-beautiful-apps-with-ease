@@ -17,4 +17,10 @@ export class AddpostdialogComponent  {
     this.dialogRef.close();
   }
 
+  category = [
+    {value: 'Web-Development', viewValue: 'Web Development'},
+    {value: 'Android-Development', viewValue: 'Anfroid Development'},
+    {value: 'IOS-Development', viewValue: 'IOS Development'}
+  ];
+
 }
