@@ -1,21 +1,24 @@
 <h1 mat-dialog-title>{{data}}</h1>
 <div mat-dialog-content>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Post Title">
+  <form class="example-form"   (submit)="onSave($event)">
+      <mat-form-field>
+          <input matInput placeholder="Post Title" type="text" required name="title">
+       </mat-form-field>
+      <mat-form-field>
+          <textarea matInput placeholder="Post Body"   required name="body"></textarea>
+      </mat-form-field>
+    <mat-form-field>
+      <mat-select   placeholder="Post Category" required name="category">
+        <mat-option *ngFor="let cat of categories" [value]="cat.value" >
+          {{ cat.viewValue }}
+        </mat-option>
+      </mat-select >
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Post Body"></textarea>
-    </mat-form-field>
-  </form>
-  <mat-select placeholder="Post Cateory">
-    <mat-option *ngFor="let cat of category" [value]="cat.value">
-      {{ cat.viewValue }}
-    </mat-option>
-  </mat-select >
-    
+      <br> <br><br>
+        <button mat-raised-button type="submit"  color="primary">Save</button>
+    </form>
+ </div>    
 <div mat-dialog-actions>
-  <button mat-raised-button (click)="onNoClick()" color="warn">Cancel</button>
-  <button mat-raised-button (click)="onNoClick()" color="primary">Save</button>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
 </div>
 

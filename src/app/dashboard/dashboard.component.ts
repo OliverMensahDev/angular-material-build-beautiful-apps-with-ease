@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, EventEmitter} from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import {AddpostdialogComponent} from '../../app/addpostdialog/addpostdialog.component';
 import {MatDialog} from '@angular/material'
@@ -28,6 +28,8 @@ export class DashboardComponent {
       
     });
   }
+
+  
    
   }
 
@@ -43,8 +45,8 @@ export class DashboardComponent {
     {position: 1,  title: "Post One", category:"Web Development", date_posted: "10th January, 2018"},
     {position: 2,  title: "Post Two", category:"Android Development", date_posted: "11th January, 2018"},
     {position: 3,  title: "Post Three", category:"IOS Development", date_posted: "11th January, 2018"},
-    {position: 4,  title: "Post Four", category:"Desktop Development", date_posted: "11th January, 2018"},
-    {position: 5,  title: "Post Five", category:"IOT Development", date_posted: "11th January, 2018"},
-    {position: 6,  title: "Post Six", category:"Machine Learning Development", date_posted: "11th January, 2018"},
+    {position: 4,  title: "Post Four", category:"Android Development", date_posted: "11th January, 2018"},
+    {position: 5,  title: "Post Five", category:"IOS Development", date_posted: "11th January, 2018"},
+    {position: 6,  title: "Post Six", category:"Web Development", date_posted: "11th January, 2018"},
   ];
 
