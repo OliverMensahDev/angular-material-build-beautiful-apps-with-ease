@@ -7,23 +7,24 @@
       <mat-icon>input</mat-icon>
       <span >Login</span>
     </a>
-   </mat-nav-list>
-   <mat-nav-list>
-      <a
+    <a mat-list-item
         *ngIf="auth.isAuthenticated()"
-        (click)="auth.logout()" type="button">
-        <mat-icon>input</mat-icon>
-        <span >LogOut</span>
-    </a>
-    </mat-nav-list>
-    <mat-nav-list>
-      <a
-        *ngIf="auth.isAuthenticated()"
-        routerLink="/"
-      >
+        routerLink="/">
       <mat-icon>home</mat-icon>  
         <span >Home</span>
-      </a>
+    </a>
+    <a mat-list-item
+      *ngIf="auth.isAuthenticated()"
+      routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon>  
+      <span>Dashboard</span>
+    </a>
+    <a  mat-list-item 
+      *ngIf="auth.isAuthenticated()"
+      (click)="auth.logout()" type="button">
+      <mat-icon>input</mat-icon>
+      <span >LogOut</span>
+    </a>  
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -40,7 +41,7 @@
        
      </div>
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
-        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
             <li>
                 <a
                   *ngIf="!auth.isAuthenticated()"
@@ -59,6 +60,15 @@
                   <span >Home</span>
               </a>
             </li>
+            <li>
+                <a
+                  *ngIf="auth.isAuthenticated()"
+                  routerLink="/dashboard"
+                >
+                    <mat-icon>dashboard</mat-icon>
+                    <span >Dashboard</span>
+                </a>
+              </li>
             <li>
                 <a
                 *ngIf="auth.isAuthenticated()"
