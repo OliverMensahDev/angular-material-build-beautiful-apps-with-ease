@@ -12,6 +12,7 @@ import { AppRouters } from './app.routes';
 import { AuthService } from './auth/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddpostdialogComponent } from './addpostdialog/addpostdialog.component';
+import { DataService } from './data/data.service';
 
 
 @NgModule({ 
@@ -32,7 +33,7 @@ import { AddpostdialogComponent } from './addpostdialog/addpostdialog.component'
     FlexLayoutModule,
     AppRouters
   ],
-  providers: [AuthService],
+  providers: [AuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

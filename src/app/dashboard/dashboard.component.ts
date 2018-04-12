@@ -1,7 +1,9 @@
 import { Component, EventEmitter} from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import {AddpostdialogComponent} from '../../app/addpostdialog/addpostdialog.component';
-import {MatDialog} from '@angular/material'
+import {MatDialog} from '@angular/material';
+import   {DataService} from '../data/data.service';
+import {Post} from  '../models/Post';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,13 +11,12 @@ import {MatDialog} from '@angular/material'
 })
 
 export class DashboardComponent {
-
-  constructor(public auth: AuthService, public dialog: MatDialog ) {
+  constructor(public auth: AuthService, public dialog: MatDialog , public data: DataService) {
     auth.handleAuthentication();
    }
 
    displayedColumns = ['position', 'title', 'category', 'date_posted'];
-   dataSource = ELEMENT_DATA;
+   dataSource = this.data.getData();
 
    openDialog(): void {
     let dialogRef = this.dialog.open(AddpostdialogComponent, {
@@ -32,21 +33,3 @@ export class DashboardComponent {
   
    
   }
-
-  export interface Post {
-    title: string;
-    category: string;
-    date_posted: string;
-    position: number
-
-  }
-  
-  const ELEMENT_DATA: Post[] = [
-    {position: 1,  title: "Post One", category:"Web Development", date_posted: "10th January, 2018"},
-    {position: 2,  title: "Post Two", category:"Android Development", date_posted: "11th January, 2018"},
-    {position: 3,  title: "Post Three", category:"IOS Development", date_posted: "11th January, 2018"},
-    {position: 4,  title: "Post Four", category:"Android Development", date_posted: "11th January, 2018"},
-    {position: 5,  title: "Post Five", category:"IOS Development", date_posted: "11th January, 2018"},
-    {position: 6,  title: "Post Six", category:"Web Development", date_posted: "11th January, 2018"},
-  ];
-
