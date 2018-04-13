@@ -8,10 +8,10 @@ import { DataService } from '../data/data.service';
   styleUrls: ['./post-dialog.component.css']
 })
 export class PostDialogComponent {
-  submitData = {
+  blogPost = {
     title: "",
     body: "",
-    category: ""
+    category: "",
   };
 
   public event: EventEmitter<any> = new EventEmitter();
@@ -25,13 +25,8 @@ export class PostDialogComponent {
     this.dialogRef.close();
   }
 
-  onSave(event): void {
-    this.submitData.title = event.target.elements.title.value;
-    this.submitData.body = event.target.elements.body.value;
-    console.log(this.submitData);
-    //this.submitData.category =  event.target.elements.category.value;
-    console.log(event.target.elements)
-    this.event.emit({ data: this.submitData });
+  onSubmit(): void {
+    console.log(this.blogPost);
     this.dialogRef.close();
     event.preventDefault();
   }

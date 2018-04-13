@@ -29,7 +29,7 @@ import { DataService } from './data/data.service';
     MaterialModule,
     FlexLayoutModule,
     AppRouters,
-    FormsModule
+    FormsModule,
   ],
   providers: [AuthService, DataService],
   bootstrap: [AppComponent]
