@@ -30,9 +30,7 @@ export class PostDialogComponent {
   onSubmit(): void {
     this.blogPost.position = this.dataService.dataLength();
     this.event.emit({data: this.blogPost});
-    console.log(this.blogPost)
     this.dialogRef.close();
-    event.preventDefault();
   }
   
   categories = this.dataService.getCategories();

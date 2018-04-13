@@ -23,13 +23,9 @@ export class DashboardComponent {
       width: '600px',
       data: 'Add Post'
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-
-    });
+    dialogRef.componentInstance.event.subscribe((result)=> {
+      this.dataSource = this.data.addPost(result.data)
+      console.log(this.dataSource)
+    })
   }
-
-
-
 }

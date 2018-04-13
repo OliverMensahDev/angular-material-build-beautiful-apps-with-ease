@@ -27,8 +27,9 @@ export class DataService {
     return this.categories;
   }
 
-  addPost(data){
+  addPost(data): Post[]{
     this.ELEMENT_DATA.push(data);
+    return this.ELEMENT_DATA;
   }
   dataLength(){
     return this.ELEMENT_DATA.length;
