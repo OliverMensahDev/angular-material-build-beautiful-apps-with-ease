@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,8 +27,7 @@ import { DataService } from './data/data.service';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRouters,
-    FormsModule
+    AppRouters
   ],
   providers: [AuthService, DataService],
   bootstrap: [AppComponent]
