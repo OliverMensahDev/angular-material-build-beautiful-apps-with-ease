@@ -11,11 +11,20 @@ export class DataService {
     { position: 5, title: "Post Five", category: "IOS Development", date_posted: "11th January, 2018" },
     { position: 6, title: "Post Six", category: "Web Development", date_posted: "11th January, 2018" },
   ];
+
+  categories = [
+    { value: 'Web-Development', viewValue: 'Web Development' },
+    { value: 'Android-Development', viewValue: 'Android Development' },
+    { value: 'IOS-Development', viewValue: 'IOS Development' }
+  ];
   constructor() { }
 
   getData(): Post[] {
     return this.ELEMENT_DATA;
   }
 
+  getCategories() {
+    return this.categories;
+  }
 
 }

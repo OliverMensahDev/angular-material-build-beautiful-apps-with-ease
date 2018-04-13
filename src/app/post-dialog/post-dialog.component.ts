@@ -1,5 +1,6 @@
 import { Component, Inject, EventEmitter, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { DataService } from '../data/data.service';
 
 @Component({
   selector: 'app-post-dialog',
@@ -16,7 +17,9 @@ export class PostDialogComponent {
   public event: EventEmitter<any> = new EventEmitter();
   constructor(
     public dialogRef: MatDialogRef<PostDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dataService: DataService
+  ) { }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -33,10 +36,6 @@ export class PostDialogComponent {
     event.preventDefault();
   }
 
-  categories = [
-    { value: 'Web-Development', viewValue: 'Web Development' },
-    { value: 'Android-Development', viewValue: 'Android Development' },
-    { value: 'IOS-Development', viewValue: 'IOS Development' }
-  ];
+  categories = this.dataService.getCategories();
 
 }
