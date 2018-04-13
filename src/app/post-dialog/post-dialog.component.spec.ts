@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddpostdialogComponent } from './addpostdialog.component';
+import { AddpostdialogComponent } from './post-dialog.component';
 
 describe('AddpostdialogComponent', () => {
   let component: AddpostdialogComponent;
@@ -8,9 +8,9 @@ describe('AddpostdialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddpostdialogComponent ]
+      declarations: [AddpostdialogComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
