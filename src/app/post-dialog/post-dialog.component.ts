@@ -12,6 +12,8 @@ export class PostDialogComponent {
     title: "",
     body: "",
     category: "",
+    position: 0, 
+    date_posted: new Date()
   };
 
   public event: EventEmitter<any> = new EventEmitter();
@@ -26,11 +28,13 @@ export class PostDialogComponent {
   }
 
   onSubmit(): void {
-    console.log(this.blogPost);
+    this.blogPost.position = this.dataService.dataLength();
+    this.event.emit({data: this.blogPost});
+    console.log(this.blogPost)
     this.dialogRef.close();
     event.preventDefault();
   }
-
+  
   categories = this.dataService.getCategories();
 
 }

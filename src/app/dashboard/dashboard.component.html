@@ -37,7 +37,7 @@
                       <!-- Position Column -->
                       <ng-container matColumnDef="position">
                         <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                        <mat-cell *matCellDef="let element"> {{element.position +1}} </mat-cell>
                       </ng-container>
                   
                       <!-- Name Column -->
@@ -56,6 +56,11 @@
                       <ng-container matColumnDef="date_posted">
                         <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
                         <mat-cell *matCellDef="let element"> {{element.date_posted}} </mat-cell>
+                      </ng-container>
+
+                      <ng-container matColumnDef="body">
+                        <mat-header-cell *matHeaderCellDef> Body </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.body}} </mat-cell>
                       </ng-container>
                   
                       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

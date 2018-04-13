@@ -15,7 +15,7 @@ export class DashboardComponent {
     auth.handleAuthentication();
   }
 
-  displayedColumns = ['position', 'title', 'category', 'date_posted'];
+  displayedColumns = ['position', 'title', 'category', 'date_posted', 'body'];
   dataSource = this.data.getData();
 
   openDialog(): void {
