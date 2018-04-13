@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Post } from '../models/Post'
+import { Post } from '../models/Post';
+import { Observable }   from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 @Injectable()
 export class DataService {
 
@@ -19,17 +21,17 @@ export class DataService {
   ];
   constructor() { }
 
-  getData(): Post[] {
-    return this.ELEMENT_DATA;
+  getData(): Observable<Post[]> {
+    return  Observable.of<Post[]>(this.ELEMENT_DATA);
   }
 
   getCategories() {
     return this.categories;
   }
 
-  addPost(data): Post[]{
+  addPost(data){
     this.ELEMENT_DATA.push(data);
-    return this.ELEMENT_DATA;
+    
   }
   dataLength(){
     return this.ELEMENT_DATA.length;
