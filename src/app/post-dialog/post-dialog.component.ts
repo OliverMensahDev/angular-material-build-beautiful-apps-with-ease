@@ -23,12 +23,6 @@ export class PostDialogComponent {
   }
 
   onSubmit(): void {
-    // this.submitData.title = event.target.elements.title.value;
-    // this.submitData.body = event.target.elements.body.value;
-    // console.log(this.submitData);
-    // this.submitData.category =  event.target.elements.category.value;
-    // console.log(event.target.elements)
-    // this.event.emit({ data: this.submitData });
     console.log(this.blogPost);
     this.dialogRef.close();
     event.preventDefault();
