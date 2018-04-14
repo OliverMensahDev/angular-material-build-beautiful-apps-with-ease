@@ -1,23 +1,18 @@
-<div  *ngIf="auth.isAuthenticated()">
+<div>
     <br>
       <div class="container">
           <div class="container">
             <div  fxLayout="column" fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row"  fxLayoutAlign="space-around center" class="content">
-                <div class="blocks">
+                <div class="blocks" *ngIf="auth.isAuthenticated()">
                     <button button="submit" mat-raised-button color="primary" (click)="openDialog()">
                         <mat-icon>add</mat-icon> Add Post
                     </button>
                 </div>
-                <!-- <div class="blocks">
-                    <button button="submit" mat-raised-button color="accent">
-                        <mat-icon>add</mat-icon> Add Category
-                    </button>
-                </div>
                 <div class="blocks">
-                    <button button="submit" mat-raised-button color="warn">
-                        <mat-icon>add</mat-icon> Add Users
-                    </button>
-                </div> -->
+                  <a button mat-raised-button color="primary" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
+                      <mat-icon>input</mat-icon>Login to Add Post
+                  </a>
+              </div>
           </div>
       </div>
       <br>
@@ -31,48 +26,38 @@
                 <div class="example-container mat-elevation-z8">
                     <mat-table #table [dataSource]="dataSource">
                   
-                      <!--- Note that these columns can be defined in any order.
-                            The actual rendered columns are set as a property on the row definition" -->
-                  
-                      <!-- Position Column -->
-                      <ng-container matColumnDef="position">
-                        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.position +1}} </mat-cell>
-                      </ng-container>
-                  
-                      <!-- Name Column -->
+                    <ng-container matColumnDef="date_posted">
+                      <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
+                      <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'dd/MM/yyyy'}} </mat-cell>
+                    </ng-container>
+
                       <ng-container matColumnDef="title">
                         <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
                         <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
                       </ng-container>
-                  
-                      <!-- Weight Column -->
+
                       <ng-container matColumnDef="category">
                         <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
                         <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
                       </ng-container>
-                  
-                      <!-- Symbol Column -->
-                      <ng-container matColumnDef="date_posted">
-                        <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.date_posted}} </mat-cell>
-                      </ng-container>
-
-                      <ng-container matColumnDef="body">
-                        <mat-header-cell *matHeaderCellDef> Body </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.body}} </mat-cell>
-                      </ng-container>
-                  
+                      
+                      <ng-container matColumnDef="delete">
+                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                          <a
+                            (click)="deletePost(element.position)" type="button">
+                            <mat-icon class="icon">delete</mat-icon>
+                          </a> 
+                        </mat-cell>
+                      </ng-container>     
+                                   
                       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                     </mat-table>
-                  </div>
-                  
+                  </div> 
             </mat-card-content>
           </mat-card>
         </div>
       </div>
-</div>
-<div *ngIf="!auth.isAuthenticated()">
-  login
-</div>
+   </div>
+   </div>

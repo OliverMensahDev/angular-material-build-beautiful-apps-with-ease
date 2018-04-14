@@ -33,6 +33,9 @@ export class DataService {
     this.ELEMENT_DATA.push(data);
     
   }
+  deletePost(index){
+    this.ELEMENT_DATA = [...this.ELEMENT_DATA.slice(0, index), ...this.ELEMENT_DATA.slice(index +1)]
+  }
   dataLength(){
     return this.ELEMENT_DATA.length;
   }

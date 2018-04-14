@@ -6,6 +6,7 @@ import { DataService } from '../data/data.service';
 import { Post } from '../models/Post';
 import { DataSource } from '@angular/cdk/table';
 import {Observable} from 'rxjs/Observable';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,7 +18,7 @@ export class DashboardComponent {
     auth.handleAuthentication();
   }
 
-  displayedColumns = ['position', 'title', 'category', 'date_posted', 'body'];
+  displayedColumns = ['date_posted', 'title', 'category', 'delete'];
   dataSource = new PostDataSource(this.dataService);
 
   openDialog(): void {
@@ -29,6 +30,15 @@ export class DashboardComponent {
       this.dataService.addPost(result.data)
       this.dataSource = new PostDataSource(this.dataService);
     })
+  }
+
+  deletePost(id){
+    if(this.auth.isAuthenticated()){
+    this.dataService.deletePost(id)
+    this.dataSource = new PostDataSource(this.dataService);
+    }else{
+      alert("Login in Before")
+    }
   }
 }
 
