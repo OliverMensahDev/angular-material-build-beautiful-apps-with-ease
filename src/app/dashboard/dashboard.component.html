@@ -28,7 +28,7 @@
                   
                     <ng-container matColumnDef="date_posted">
                       <mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
-                      <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'dd/MM/yyyy'}} </mat-cell>
+                      <mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}} </mat-cell>
                     </ng-container>
 
                       <ng-container matColumnDef="title">

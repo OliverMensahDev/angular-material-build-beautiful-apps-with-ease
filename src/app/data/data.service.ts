@@ -6,12 +6,12 @@ import 'rxjs/add/observable/of';
 export class DataService {
 
   ELEMENT_DATA: Post[] = [
-    { position: 0, title: "Post One", category: "Web Development", date_posted: new Date(10,11, 2018) ,body: "Body 1"},
-    { position: 1, title: "Post Two", category: "Android Development", date_posted: new Date(10,11, 2018) ,body: "Body 2"},
-    { position: 2, title: "Post Three", category: "IOS Development", date_posted: new Date(10,11, 2018) ,body: "Body 3" },
-    { position: 3, title: "Post Four", category: "Android Development", date_posted: new Date(10,11, 2018) ,body: "Body 4"},
-    { position: 4, title: "Post Five", category: "IOS Development", date_posted: new Date(10,11, 2018) ,body: "Body 5"},
-    { position: 5, title: "Post Six", category: "Web Development", date_posted: new Date(10,11, 2018) ,body: "Body 6"},
+    { position: 0, title: "Post One", category: "Web Development", date_posted: new Date() ,body: "Body 1"},
+    { position: 1, title: "Post Two", category: "Android Development", date_posted: new Date() ,body: "Body 2"},
+    { position: 2, title: "Post Three", category: "IOS Development", date_posted: new Date() ,body: "Body 3" },
+    { position: 3, title: "Post Four", category: "Android Development", date_posted: new Date() ,body: "Body 4"},
+    { position: 4, title: "Post Five", category: "IOS Development", date_posted: new Date() ,body: "Body 5"},
+    { position: 5, title: "Post Six", category: "Web Development", date_posted: new Date() ,body: "Body 6"},
   ];
 
   categories = [
