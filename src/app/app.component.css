@@ -33,7 +33,6 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     width: 15%;
   }
   .label{
-    border-bottom: 1px solid #0f8ccd;
     display: inline-block;
     line-height: 30px;
     margin: 0;
